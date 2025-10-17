@@ -6,7 +6,7 @@ public abstract class Imovel {
     protected boolean alugado;
     protected Proprietario proprietario;
 
-    public Imovel(String endereco, int numero, boolean alugado, Proprietario proprietario){
+    public Imovel(String endereco, int numero, Proprietario proprietario){
         this.endereco = endereco;
         this.numero = numero;
         this.alugado = false;
@@ -16,7 +16,7 @@ public abstract class Imovel {
     //getters e setters
 
     public boolean isAlugado() {
-        return this.alugado;
+        return alugado;
     }
 
     public String contatoProprietario() {
@@ -27,5 +27,5 @@ public abstract class Imovel {
     }
 
     public abstract String estaAlugado();
-    public abstract double aluguel();
+    public abstract double calcularAluguel(int meses);
 }
