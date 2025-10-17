@@ -1,25 +1,26 @@
 package model;
 
-public class Proprietario {
-    private String nome;
-    private String telefone;
-    private String cpf;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Proprietario(String nome, String telefone, String cpf) {
-        this.nome = nome;
-        this.telefone = telefone;
-        this.cpf = cpf;
+public class Proprietario extends Pessoa{
+    private List<Imovel> imoveis;
+
+    public Proprietario(String cpf, String nome, String telefone) {
+        super(cpf, nome, telefone);
+        this.imoveis = new ArrayList<>();
     }
 
-    public String getNome(){
-        return nome;
+    public void adicionarImovel(Imovel imovel){
+        imoveis.add(imovel);
     }
 
-    public String getTelefone(){
-        return telefone;
+    public List<Imovel> getImoveis() {
+        return imoveis;
     }
 
-    public String getCpf(){
-        return cpf;
+    @Override
+    public String toString() {
+        return "Nome: " + nome + " - CPF: " + cpf + " - Telefone: " + telefone;
     }
 }
