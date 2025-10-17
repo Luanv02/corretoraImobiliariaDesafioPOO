@@ -1,10 +1,11 @@
 package model;
 
 public class Casa extends Imovel {
-    public double valorMensalidade = 500.00;
+    public double valorMensalidade;
 
-    public Casa(String endereco, int numero, Proprietario proprietario) {
+    public Casa(String endereco, int numero, Proprietario proprietario, double valorMensalidade) {
         super(endereco, numero, proprietario);
+        this.valorMensalidade = valorMensalidade;
     }
 
     @Override
@@ -19,5 +20,10 @@ public class Casa extends Imovel {
     @Override
     public double calcularAluguel(int quantidadeMeses) {
         return valorMensalidade * quantidadeMeses;
+    }
+
+    @Override
+    public String toString() {
+        return "Casa nº " + numero + " - Endereço: " + endereco + estaAlugado() + contatoProprietario();
     }
 }

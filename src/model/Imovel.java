@@ -15,6 +15,13 @@ public abstract class Imovel {
 
     //getters e setters
 
+    public boolean setAlugado(boolean alugou) {
+        if (alugou) {
+            return alugado = true;
+        }
+        return alugado = false;
+    }
+
     public boolean isAlugado() {
         return alugado;
     }

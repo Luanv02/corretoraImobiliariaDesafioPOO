@@ -1,10 +1,11 @@
 package model;
 
 public class Apartamento extends Imovel{
-    public double valorMensalidade = 1000.00;
+    public double valorMensalidade;
 
-    public Apartamento(String endereco, int numero, Proprietario proprietario) {
+    public Apartamento(String endereco, int numero, Proprietario proprietario, double valorMensalidade) {
         super(endereco, numero, proprietario);
+        this.valorMensalidade = valorMensalidade;
     }
 
     @Override
@@ -19,5 +20,10 @@ public class Apartamento extends Imovel{
     @Override
     public double calcularAluguel(int quantidadeMeses) {
         return valorMensalidade * quantidadeMeses;
+    }
+
+    @Override
+    public String toString() {
+        return "Apartamento nº " + numero + " - Endereço: " + endereco + estaAlugado() + contatoProprietario();
     }
 }
