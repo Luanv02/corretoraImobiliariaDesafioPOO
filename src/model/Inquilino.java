@@ -1,0 +1,23 @@
+package model;
+
+public class Inquilino extends Pessoa {
+    private Imovel imovelAlugado;
+
+    public Inquilino(String cpf, String nome, String telefone){
+        super(cpf, nome, telefone);
+    }
+
+    public Imovel getImovelAlugado() {
+        return imovelAlugado;
+    }
+
+    public void alugarImovel(Imovel imovel) {
+        this.imovelAlugado = imovel;
+        imovel.setAlugado(true);
+    }
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + " - CPF: " + cpf + " - Telefone: " + telefone;
+    }
+}
