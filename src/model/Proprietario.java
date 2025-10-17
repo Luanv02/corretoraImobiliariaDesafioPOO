@@ -19,6 +19,10 @@ public class Proprietario extends Pessoa{
         return imoveis;
     }
 
+    public void removerImovel(Imovel imovel) {
+        imoveis.remove(imovel);
+    }
+
     @Override
     public String toString() {
         return "Nome: " + nome + " - CPF: " + cpf + " - Telefone: " + telefone;

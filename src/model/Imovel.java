@@ -4,7 +4,7 @@ public abstract class Imovel {
     protected String endereco;
     protected int numero;
     protected boolean alugado;
-    protected Proprietario proprietario;
+    public Proprietario proprietario;
 
     public Imovel(String endereco, int numero, Proprietario proprietario){
         this.endereco = endereco;
@@ -15,11 +15,8 @@ public abstract class Imovel {
 
     //getters e setters
 
-    public boolean setAlugado(boolean alugou) {
-        if (alugou) {
-            return alugado = true;
-        }
-        return alugado = false;
+    public void setAlugado(boolean alugado) {
+        this.alugado = alugado;
     }
 
     public boolean isAlugado() {
@@ -30,7 +27,7 @@ public abstract class Imovel {
         String NomeProprietario = this.proprietario.getNome();
         String telefoneProprietario = this.proprietario.getTelefone();
 
-        return String.format("Contato do telefone do proprietário %s é: $s", NomeProprietario, telefoneProprietario);
+        return String.format("Contato do telefone do proprietário %s é: %s", NomeProprietario, telefoneProprietario);
     }
 
     public abstract String estaAlugado();

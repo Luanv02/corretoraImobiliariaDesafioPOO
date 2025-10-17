@@ -24,6 +24,6 @@ public class Casa extends Imovel {
 
     @Override
     public String toString() {
-        return "Casa nº " + numero + " - Endereço: " + endereco + estaAlugado() + contatoProprietario();
+        return "Casa nº " + numero + " - Endereço: " + endereco + " (" + estaAlugado() + ") " + contatoProprietario();
     }
 }

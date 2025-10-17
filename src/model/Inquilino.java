@@ -16,8 +16,15 @@ public class Inquilino extends Pessoa {
         imovel.setAlugado(true);
     }
 
+    public void desocuparImovel() {
+        if (this.imovelAlugado != null) {
+            this.imovelAlugado.setAlugado(false);
+            this.imovelAlugado = null;
+        }
+    }
+
     @Override
     public String toString() {
-        return "Nome: " + nome + " - CPF: " + cpf + " - Telefone: " + telefone;
+        return "Nome: " + nome + " - CPF: " + cpf + " - Telefone: " + telefone + " Imovel alugado: " + imovelAlugado;
     }
 }
